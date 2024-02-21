@@ -1,4 +1,5 @@
 import { SuperSEO, SuperSEOProps } from "react-super-seo";
+import { APP } from "shared/utils/const";
 
 interface ISeoProps extends SuperSEOProps {
     title: string;
@@ -17,7 +18,8 @@ const Seo = ({
     const defaultDescription = description || "Basic description from the page";
     return (
         <SuperSEO
-            title={title}
+            // title={title}
+            title={`${title.trim()} | ${APP.title}`}
             description={defaultDescription}
             lang={lang || "id"}
             openGraph={{
