@@ -1,4 +1,4 @@
-import BaseAppShell from "layouts/BaseAppShell";
+import UserAppShell from "layouts/UserAppShell";
 import SigninPage from "pages/Common/Signin";
 import SignupPage from "pages/Common/Signup";
 import { useState } from "react";
@@ -11,7 +11,7 @@ const Router = () => {
 
     return (
         <BrowserRouter>
-            <BaseAppShell>
+            <UserAppShell>
                 <Routes>
                     <Route path={SIGNIN} element={<SigninPage />} />
                     {isRoleSet && role === "" && (
@@ -25,7 +25,7 @@ const Router = () => {
                         <Route path={SIGNUP} element={<SignupPage />} />
                     )}
                 </Routes>
-            </BaseAppShell>
+            </UserAppShell>
         </BrowserRouter>
     );
 };

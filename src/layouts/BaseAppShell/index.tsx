@@ -1,6 +1,7 @@
-import { AppShell, Group, rem, Image } from "@mantine/core";
+import { AppShell, Group, rem, Image, Button } from "@mantine/core";
 import React, { PropsWithChildren } from "react";
 import Logo from "/images/logo.svg";
+import { HiOutlineUser } from "react-icons/hi";
 import { COLORS } from "shared/utils/colors";
 
 export interface IAppShellRoutes extends PropsWithChildren {
@@ -8,19 +9,39 @@ export interface IAppShellRoutes extends PropsWithChildren {
 }
 const BaseAppShell = ({ children }: IAppShellRoutes) => {
     return (
-        <AppShell
-            className={"h-screen"}
-            bg={COLORS.primary}
-            header={{ height: 60 }}
-            m="lg"
-        >
-            <AppShell.Header
-                bg={COLORS.primary}
-                withBorder
-                style={{ border: "1px solid black" }}
-            >
-                <Group className={"px-20 py-5"} h="100%">
-                    <Image src={Logo}></Image>
+        <AppShell className={"h-screen"} header={{ height: 60 }} m="lg">
+            <AppShell.Header>
+                <Group
+                    className={"flex justify-between items-center px-20 py-5"}
+                >
+                    <Image src={Logo} />
+                    <Group className={"flex gap-x-20"}>
+                        <Button
+                            className={"text-xl text-white"}
+                            bg={COLORS.primary}
+                        >
+                            Beranda
+                        </Button>
+                        <Button
+                            className={"text-xl text-white"}
+                            bg={COLORS.primary}
+                        >
+                            Toko
+                        </Button>
+                        <Button
+                            className={"text-xl text-white"}
+                            bg={COLORS.primary}
+                        >
+                            Tentang
+                        </Button>
+                        <Button
+                            className={"text-xl text-white"}
+                            bg={COLORS.primary}
+                        >
+                            Artikel
+                        </Button>
+                    </Group>
+                    <HiOutlineUser size={30} color={COLORS.white} />
                 </Group>
             </AppShell.Header>
 
