@@ -41,6 +41,22 @@ const themeConfig: MantineThemeOverride = {
     },
     primaryColor: "primary",
     primaryShade: 5,
+    components: {
+        Title: {
+            defaultProps() {
+                return {
+                    color: COLORS.white,
+                };
+            },
+        },
+        Text: {
+            defaultProps() {
+                return {
+                    color: COLORS.white,
+                };
+            },
+        },
+    },
 };
 
 export default themeConfig;

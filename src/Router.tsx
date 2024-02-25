@@ -1,13 +1,12 @@
 import UserAppShell from "layouts/UserAppShell";
 import SigninPage from "pages/Common/Signin";
 import SignupPage from "pages/Common/Signup";
-import { useState } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { SIGNIN, SIGNUP, asAbsolutePath } from "shared/utils/route";
 
 const Router = () => {
-    const [role, setRole] = useState<string>("");
-    const [isRoleSet, setIsRoleSet] = useState<boolean>(true);
+    const role = "";
+    const isRoleSet = true;
 
     return (
         <BrowserRouter>
