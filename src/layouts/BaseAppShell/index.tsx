@@ -10,11 +10,7 @@ export interface IAppShellRoutes extends PropsWithChildren {
 const BaseAppShell = ({ children }: IAppShellRoutes) => {
     return (
         <AppShell bg={COLORS.primary}>
-            <Group
-                h={100}
-                className={"justify-between items-center px-20 py-5"}
-                mb={"xl"}
-            >
+            <Group className={"justify-between items-center px-20"} py={16}>
                 <Image src={Logo} />
                 <Group>
                     <Button size={"xl"} className={"text-white"}>

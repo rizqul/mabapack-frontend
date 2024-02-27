@@ -20,7 +20,7 @@ const SigninPage = () => {
     return (
         <>
             <Seo title={PAGE_TITLE} />
-            <Group mx={100} align={"end"} justify={"space-between"}>
+            <Group mt={100} mx={100} align={"end"} justify={"space-between"}>
                 <Stack align={"center"}>
                     <Image className={"w-80"} src={Logo}></Image>
                     <Image src={Moto}></Image>
@@ -57,6 +57,8 @@ const SigninPage = () => {
                     </Group>
                     <Stack align={"center"} mt={20}>
                         <Button
+                            component="a"
+                            href={"home"}
                             size={"lg"}
                             w={240}
                             bg={COLORS.action}

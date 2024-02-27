@@ -1,8 +1,9 @@
 import UserAppShell from "layouts/UserAppShell";
 import SigninPage from "pages/Common/Signin";
 import SignupPage from "pages/Common/Signup";
+import PublicHomePage from "pages/Public/Home";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import { SIGNIN, SIGNUP, asAbsolutePath } from "shared/utils/route";
+import { HOME, SIGNIN, SIGNUP, asAbsolutePath } from "shared/utils/route";
 
 const Router = () => {
     const role = "";
@@ -20,6 +21,7 @@ const Router = () => {
                         />
                     )}
                     <Route path={SIGNUP} element={<SignupPage />} />
+                    <Route path={HOME} element={<PublicHomePage />} />
 
                     {!isRoleSet && role !== "" && (
                         <Route path={SIGNUP} element={<SignupPage />} />
