@@ -5,8 +5,9 @@ import {
     Title,
     TextInput,
     Switch,
-    UnstyledButton,
     Button,
+    Anchor,
+    Text,
 } from "@mantine/core";
 import Seo from "shared/components/Seo";
 import Logo from "/images/logo.svg";
@@ -19,12 +20,12 @@ const SigninPage = () => {
     return (
         <>
             <Seo title={PAGE_TITLE} />
-            <Group mx={48} align={"end"} justify={"space-between"}>
+            <Group mx={100} align={"end"} justify={"space-between"}>
                 <Stack align={"center"}>
                     <Image className={"w-80"} src={Logo}></Image>
                     <Image src={Moto}></Image>
                 </Stack>
-                <Stack align={"center"} gap={"xl"}>
+                <Stack align={"center"} gap={"lg"}>
                     <Title className={"font-xl text-center"} c={"white"}>
                         Sign in
                     </Title>
@@ -50,23 +51,38 @@ const SigninPage = () => {
                             defaultChecked
                             label={"Remember me"}
                         />
-                        <UnstyledButton c={"white"} size={"lg"}>
+                        <Anchor c={"white"} size={"lg"}>
                             Forgot Password?
-                        </UnstyledButton>
+                        </Anchor>
                     </Group>
-                    <Button
-                        size={"md"}
-                        w={160}
-                        bg={COLORS.action}
-                        rightSection={
-                            <MdArrowForward
-                                color={COLORS.white}
-                                className={"text-xl"}
-                            />
-                        }
-                    >
-                        Sign in
-                    </Button>
+                    <Stack align={"center"} mt={20}>
+                        <Button
+                            size={"lg"}
+                            w={240}
+                            bg={COLORS.action}
+                            rightSection={
+                                <MdArrowForward
+                                    color={COLORS.white}
+                                    className={"text-xl"}
+                                />
+                            }
+                        >
+                            Sign in
+                        </Button>
+                        <Group>
+                            <Text c={"white"} size={"md"}>
+                                Need an account?
+                            </Text>
+                            <Anchor
+                                className={"font-bold"}
+                                c={"white"}
+                                size={"md"}
+                                href={"signup"}
+                            >
+                                Sign up
+                            </Anchor>
+                        </Group>
+                    </Stack>
                 </Stack>
             </Group>
         </>

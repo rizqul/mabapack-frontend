@@ -19,6 +19,7 @@ const Router = () => {
                             element={<Navigate to={asAbsolutePath(SIGNIN)} />}
                         />
                     )}
+                    <Route path={SIGNUP} element={<SignupPage />} />
 
                     {!isRoleSet && role !== "" && (
                         <Route path={SIGNUP} element={<SignupPage />} />
