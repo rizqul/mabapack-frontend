@@ -10,22 +10,24 @@ const Router = () => {
     const isRoleSet = true;
 
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/mabapack-frontend">
             <UserAppShell>
                 <Routes>
                     <Route path={SIGNIN} element={<SigninPage />} />
-                    {isRoleSet && role === "" && (
+
+                    {(!isRoleSet || role != "") ?? (
                         <Route
                             index
                             element={<Navigate to={asAbsolutePath(SIGNIN)} />}
                         />
                     )}
+
                     <Route path={SIGNUP} element={<SignupPage />} />
                     <Route path={HOME} element={<PublicHomePage />} />
-
-                    {!isRoleSet && role !== "" && (
-                        <Route path={SIGNUP} element={<SignupPage />} />
-                    )}
+                    <Route
+                        path="*"
+                        element={<Navigate to={asAbsolutePath(SIGNIN)} />}
+                    />
                 </Routes>
             </UserAppShell>
         </BrowserRouter>
